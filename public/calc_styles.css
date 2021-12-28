@@ -1,0 +1,139 @@
+@font-face {
+    font-family: 'Helvetica Neue Light';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./fonts/HelveticaNeueLight.ttf') format('ttf')
+ }
+
+body, button{
+    font-family: 'Helvetica Neue Light';
+}
+#calculatorWrapper{
+    width: 302px;
+    height: 462px;
+    margin-left: 50px;
+    margin-top: 50px;
+    background-image: linear-gradient(#939393,#656565);
+    border: 2px solid #000;
+}
+
+#equation, #result{
+    color: white;
+    text-align: right;
+    height: 49px;
+    width: 232px;
+    margin-left: 44px;
+    letter-spacing: 1px;
+}
+
+#result{
+    color: #c1c1c1;
+    text-align: right;
+    height: 49px;
+}
+
+#equation{    
+    margin-top: 25px;
+}
+
+#equation ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#equation ul li{
+    display: inline-block;
+}
+
+.display-big{
+    font-size: 40px;
+}
+
+.display-big ul li.times-symbol,
+.display-big ul li.division-symbol,
+.display-big ul li.plus-symbol,
+.display-big ul li.minus-symbol {
+    background-size: 23px 25px!important;
+    width: 28px;
+    height: 22px;
+}
+
+.display-small{
+    font-size: 20px;
+}
+
+.display-small ul li.times-symbol,
+.display-small ul li.division-symbol,
+.display-small ul li.plus-symbol,
+.display-small ul li.minus-symbol {
+    background-size: 10px 10px!important;
+    width: 10px;
+    height: 10px;
+}
+
+#equation ul li.times-symbol{
+    background:url('/images/times.png') no-repeat center center;
+}
+
+#equation ul li.division-symbol{
+    background:url('/images/division.png') no-repeat center center;
+}
+
+#equation ul li.plus-symbol{
+    background:url('/images/plus.png') no-repeat center center;
+}
+
+#equation ul li.minus-symbol{
+    background:url('/images/minus.png') no-repeat center center;    
+}
+
+#keyboard{    
+    margin-left: 25px;
+}
+
+#clear-display{
+    border: 1px solid white;
+    background: #8B8B8B;
+    height: 48px;
+    width: 116px;   
+    outline: none;
+    color: white; 
+    font-size: 20px;
+}
+
+.digit-pad{
+    margin-top: 19px;
+}
+
+.digit-pad button{
+    height: 48px;
+    width: 48px;   
+    outline: none;
+    font-size: 30px;
+    margin-right: 20px;
+}
+
+.digit-button{
+    border: 0;
+    background: white;
+    color: #6c6c6c; 
+}
+
+.digit-0{
+    width: 116px!important;
+    text-align: left;
+    padding-left: 15px;
+}
+
+.operand-button{
+    background: #50B3E8;
+    border: 1px solid white;
+    color: white; 
+}
+
+.equal-button{
+    background: #3AD1CB;
+    border: 1px solid white;
+    color: white; 
+}
