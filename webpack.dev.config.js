@@ -48,7 +48,7 @@ module.exports = {
         new webpack.HotModuleReplacementPlugin(),
     ],
     devServer: {
-        contentBase: path.join(__dirname, "./"),
+        contentBase: path.join(__dirname, "./public/"),
         historyApiFallback: true,
         //port: 9000,
         inline: true,
