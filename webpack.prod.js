@@ -42,7 +42,6 @@ module.exports = {
     plugins: [
         new MiniCssExtractPlugin({
             filename: 'styles.css',
-            chunkFilename: '[id].[hash].css',
         }),
     ],
     devtool: "source-map"
