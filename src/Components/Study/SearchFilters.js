@@ -1,24 +1,26 @@
 import React from 'react';
-import { Form, Input, Grid } from 'semantic-ui-react'
+import { Form, Input, Label, Icon } from 'semantic-ui-react'
 
 const SearchFilters = props => {
 
-    
+
     return (
-        <div style={{padding: '10px 10px 0px 10px'}}>
+        <div style={{ padding: '10px 10px 0px 10px' }}>
             <Form>
                 <Input
                     fluid
                     placeholder='Search bible...'
-                    labelPosition='left'
-                    label={{ basic: true, content: `${props.searchInfo.results.length}` }}
+                    labelPosition='right'
+                    // label={{ basic: true }}
                     onChange={e => props.onChange(e.target.value)}
-                />
-                <p />
-                {/* <Form.Group inline>
-                        <Form.Checkbox slider label="Spaces" />
-                        <Form.Checkbox slider label="ponctuations" />
-                    </Form.Group> */}
+                >
+                    <Label style={{ width: 50, textAlign: 'center' }} basic>{props.searchInfo.results.length}</Label>
+                    <input value={props.searchInfo.value} />
+                    <Label style={{ width: 35, borderLeft: 'none' }} basic>
+                        <Icon name="times" color="grey" onClick={() => props.onChange(null)} />
+                    </Label>
+                </Input>
+                <p />}
             </Form>
         </div>
     )
