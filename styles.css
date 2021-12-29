@@ -63,7 +63,7 @@ body {
 
 
 .bible-reading {
-    width: calc(100% / 2);
+    /* width: calc(100% / 2); */
     position: absolute;
     height: 100%;
     overflow-y: hidden;
@@ -72,7 +72,7 @@ body {
 .bible-search {
     position: absolute;
     right: 0px;
-    width: calc(100% / 2);
+    /* width: calc(100% / 2); */
     height: 100%;
     background-color: rgb(236, 247, 253);
     overflow-y: hidden;
