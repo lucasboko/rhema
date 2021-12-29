@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useLayoutEffect } from 'react';
 import { debounce, filter } from "lodash";
-import { Icon } from 'semantic-ui-react';
+import { Icon, Button } from 'semantic-ui-react';
 
 
 import Book from './Book.js';
@@ -17,8 +17,9 @@ const SearchBible = props => {
     const [xml, setXML] = useState(undefined)
     const [versesList, setVerses] = useState(undefined)
     const [searchInfo, setSearch] = useState({ value: undefined, results: [] })
-    const [readingIndex, setReadingIndex] = useState({ book: 0, chapter: 0, hlv: undefined})
+    const [readingIndex, setReadingIndex] = useState({ book: 0, chapter: 0, hlv: undefined })
 
+    const [hide, setHide] = useState({ reading: false, search: false })
 
 
     useEffect(() => {
@@ -58,16 +59,16 @@ const SearchBible = props => {
     })
 
     useLayoutEffect(() => {
-        if(readingIndex.hlv) {
-            var ele = document.getElementById(`verse-${readingIndex.hlv}`);   
+        if (readingIndex.hlv) {
+            var ele = document.getElementById(`verse-${readingIndex.hlv}`);
             console.log(ele)
             ele.scrollIntoView();
         }
-       
+
     }, [readingIndex.hlv])
 
     const goToChapter = (b, c, v) => {
-        setReadingIndex({ book: b, chapter: c, hlv: v})
+        setReadingIndex({ book: b, chapter: c, hlv: v })
     }
 
     const search = debounce(val => {
@@ -120,7 +121,7 @@ const SearchBible = props => {
         <div className="app-wrapper">
             {/* <div className="bible-content">{displayBible()}</div> */}
             {/* <div className="bible-content"> */}
-            <div className="bible-reading">
+            <div className="bible-reading" style={{ display: `${hide.reading ? 'none' : 'initial'}`, width: `calc(100% / ${hide.search ? 1 : 2}`}}>
                 <ReadingNavigation
                     readingIndex={readingIndex}
                     setReadingIndex={setReadingIndex}
@@ -141,7 +142,7 @@ const SearchBible = props => {
                     }
                 </div>
             </div>
-            <div className="bible-search">
+            <div className="bible-search"  style={{ display: `${hide.search ? 'none' : 'initial'}`, width: `calc(100% / ${hide.reading ? 1 : 2}` }}>
                 <SearchFilters onChange={search} searchInfo={searchInfo} />
                 <div className="bible-search-results">
                     {
@@ -154,6 +155,11 @@ const SearchBible = props => {
                         )
                     }
                 </div>
+            </div>
+            <div style={{ position: 'fixed', bottom: 20, left: 20, display: `${props.app !== 'study' ? 'none' : 'initial'}` }}>
+                <Button size="tiny" onClick={() => setHide({ ...hide, reading: !hide.reading })}>{`${hide.reading ? 'show' : 'hide'} reading`}</Button>
+                <br /><br />
+                <Button size="tiny" onClick={() => setHide({ ...hide, search: !hide.search })}>{`${hide.search ? 'show' : 'hide'} study`}</Button>
             </div>
         </div>
 

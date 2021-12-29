@@ -17,7 +17,7 @@ const Rhema = props => {
             <div className={app === 'study' ? "search-wrapper" : 'program-wrapper'}>
                 {
                     app === 'study'
-                        ? <SearchBible />
+                        ? <SearchBible app={app} />
                         : <BibleReading />
                 }
             </div>
