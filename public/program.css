@@ -11,13 +11,15 @@ body, button {
 
 .program-wrapper {
     position: absolute;
-    width: calc(100% - 150px);
-    left: 150px;
+    /* width: calc(100% - 150px); */
+    width: calc(100%);
+    /* left: 150px; */
 }
 
 .program-filters {
-    width: calc(100% - 150px);
-    left: 150px;
+    /* width: calc(100% - 150px); */
+    width: calc(100%);
+    /* left: 150px; */
     position: fixed;
     padding: 5px 20px;
     height: 75px;
@@ -32,8 +34,9 @@ body, button {
     position: fixed;
     top: 75px;
     padding: 0 100px;
-    width: calc(100% - 150px);
-    left: 150px;
+    width: calc(100%);
+    /* width: calc(100% - 150px); */
+    /* left: 150px; */
     height: calc(100% - 75px);
     overflow-y: scroll;
 }
